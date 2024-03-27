@@ -12,7 +12,7 @@ group_members = Label(window,
               bg='#8590c5') #Background Color
 group_members.place(x=415,y=30) 
 
-group_List = "Macorol, \nCampos, \nTamayo, Bandong"
+group_List = "Macorol, \nCampos, \nTamayo, \nBandong"
 group_ListVar = Message(window, 
                         text=group_List)
 group_ListVar.config(bg="#fffcb0", 
