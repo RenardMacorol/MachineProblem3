@@ -1,43 +1,112 @@
 from tkinter import * #import tkinter
 
-window = Tk() #instace a window 
-standardtext =40 ## standard text size
-window.geometry("1280x750")  # set size of a window
-window.title("Machine Problem #3")
-window.config(background="#dadef4") #voilet tokyo  
+class GUI:
+    def __init__(self,main_Window):
+        self.main_Window = main_Window
+        main_Window.geometry("1280x750")  # set size of a window
+        main_Window.title("Machine Problem #3")
+        main_Window.config(background="#dadef4")
+        main_Window.resizable(width=False,height=False) #voilet tokyo 
 
-group_members = Label(window,
+        self.show_welcome_screen()
+
+    def show_welcome_screen(self):
+        self.welcome_Message = Message(self.main_Window,
+                                            text="Welcome! Please Choose One Program",
+                                            font=('RobotoMono',30,'bold'),
+                                            fg="#1f2335",
+                                            bg="#7aa2f7",
+                                            width='800')
+        self.dfs_Button = Button(self.main_Window,
+                                    text="DFS",
+                                    font=('RobotoMono',30,'bold'),
+                                    command=self.dfs_clicked,
+                                    fg="#1f2335",
+                                    bg="#7aa2f7",
+                                    width=20,
+                                    anchor=CENTER,
+                                    relief=FLAT)
+        self.topological_Button = Button(self.main_Window,
+                                            text="Topological Sorting",
+                                            font=('RobotoMono',30,'bold'),
+                                            command=self.topological_clicked,
+                                            fg="#1f2335",
+                                            bg="#7aa2f7",
+                                            width=20,
+                                            anchor=CENTER,
+                                            relief=FLAT)
+        self.aboutUs_Button = Button(self.main_Window,
+                                        text="About Us",
+                                        font=('RobotoMono',30,'bold'),
+                                        command=self.aboutUs_clicked,
+                                        fg="#1f2335",
+                                        bg="#7aa2f7",
+                                        width=10,
+                                        anchor=CENTER,
+                                        relief=FLAT)
+        self.welcome_Message.place(x=280,y=50)
+        self.dfs_Button.place(x=30,y=350)
+        self.topological_Button.place(x=750,y=350)
+        self.aboutUs_Button.place(x=500,y=600)
+    
+    def remove_Welcome(self):
+        self.welcome_Message.place_forget()
+        self.dfs_Button.place_forget()
+        self.topological_Button.place_forget()
+        self.aboutUs_Button.place_forget()
+    
+    def topological_clicked(self):
+        self.remove_Welcome()
+    
+    def dfs_clicked(self):
+        self.remove_Welcome()
+    
+    def aboutUs_clicked(self):
+        #About Us
+        self.remove_Welcome()
+        self.group_members = Label(self.main_Window,
               text="Group Members",
               font=('RobotoMono',40,'bold'),
               fg='#000000', #Foregroud Color
-              bg='#8590c5') #Background Color
-group_members.place(x=415,y=30) 
+              bg='#8590c5',
+              relief=FLAT) #Background Color
+        self.group_List = Message(self.main_Window, 
+                        text="Macorol, \nCampos, \nTamayo, \nBandong",
+                        bg="#fffcb0", 
+                        font=('RobotoMono',40,'bold'),
+                        fg='#000000',
+                        borderwidth=65,
+                        anchor=CENTER,
+                        relief=FLAT)
+        self.group_members.place(x=415,y=30) 
+        self.group_List.place(x=415,y=100)
+        
 
+def main():
+        window = Tk()#Create a window
+        app = GUI(window)
+        window.mainloop()
 
+if __name__ == "__main__":
+     main()
 
-group_List = "Macorol, \nCampos, \nTamayo, \nBandong"
-group_ListVar = Message(window, 
-                        text=group_List)
-group_ListVar.config(bg="#fffcb0", 
-                     font=('RobotoMono',standardtext,'bold'),
-                     fg='#000000')
-group_ListVar.place(x=415,y=100)
-
-def click():
-    window.quit()
     
 
-button = Button(window,
-                text="Quit",
-                command=click,
-                bg="#fffcb0", 
-                font=('RobotoMono',40,'bold'),
-                fg='#000000')
-
-button.place(x=500,y=500)
 
 
-window.mainloop() # set visible 
 
+
+
+
+#DFS Area 
+#Choose Graph to proceed
+#Graph1
+#Graph2
+#Graph3
+#Try Topological
+
+#Topological Area
+#Graph1,Graph2,Graph3
+#Try Dfs
 
 
