@@ -1,6 +1,17 @@
 from tkinter import * #import tkinter
 
+#NOTE!! Plss for Development GUI Refer in this link 
+# https://www.canva.com/design/DAGA173ym1c/d_z45DCcBHGC4QYWXCA_Fg/edit?utm_content=DAGA173ym1c&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
+#Program Flow
+#starting page 
+#Choose option --> DFs, Topological, About us
+#DFS -->Back button, Choose Graph, Execute
+#Topological -->Back Button, Choose Graph, Execute
+#About us -->Back Button(Starting Pagae),Exit(Collappse all)
+
 class GUI:
+    #Default Constructors of the program
     def __init__(self,main_Window):
         self.main_Window = main_Window
         main_Window.geometry("1280x750")  # set size of a window
@@ -10,6 +21,7 @@ class GUI:
 
         self.show_welcome_screen()
 
+    #Starting page/ Welcome Page
     def show_welcome_screen(self):
         self.welcome_Message = Message(self.main_Window,
                                             text="Welcome! Please Choose One Program",
@@ -49,18 +61,45 @@ class GUI:
         self.topological_Button.place(x=750,y=350)
         self.aboutUs_Button.place(x=500,y=600)
     
+    # Remove the starting labels
     def remove_Welcome(self):
         self.welcome_Message.place_forget()
         self.dfs_Button.place_forget()
         self.topological_Button.place_forget()
         self.aboutUs_Button.place_forget()
-    
+    #def back_clicked(self,pagenum):
+        #if(pagenum==0):
+            
+        #if(pagenum==1):
+            
+        #if(pagenum==2):
+    # remove welcome then --> topological page
     def topological_clicked(self):
         self.remove_Welcome()
-    
+        self.back_button = Button(self.main_Window,
+                                  text="Back",
+                                  bg="#fffcb0", 
+                                  font=('RobotoMono',40,'bold'),
+                                  fg='#000000',
+                                  borderwidth=65,
+                                  command=back_clicked(0),
+                                  anchor=CENTER,
+                                  relief=FLAT)
+        self.back_button.place(x=500,y=600)  
+    # remove welcome then --> dfs page 
     def dfs_clicked(self):
         self.remove_Welcome()
-    
+        self.back_button = Button(self.main_Window,
+                                  text="Back",
+                                  bg="#fffcb0", 
+                                  font=('RobotoMono',40,'bold'),
+                                  fg='#000000',
+                                  borderwidth=65,
+                                  command=back_clicked(0),
+                                  anchor=CENTER,
+                                  relief=FLAT)
+        self.back_button.place(x=500,y=600) 
+    # remove welcome the --> about page  
     def aboutUs_clicked(self):
         #About Us
         self.remove_Welcome()
@@ -78,10 +117,20 @@ class GUI:
                         borderwidth=65,
                         anchor=CENTER,
                         relief=FLAT)
+        self.back_button = Button(self.main_Window,
+                                  text="Back",
+                                  bg="#fffcb0", 
+                                  font=('RobotoMono',40,'bold'),
+                                  fg='#000000',
+                                  borderwidth=65,
+                                  command=back_clicked(0),
+                                  anchor=CENTER,
+                                  relief=FLAT)
+        self.back_button.place(x=500,y=600)                          
         self.group_members.place(x=415,y=30) 
         self.group_List.place(x=415,y=100)
         
-
+#Intialize program
 def main():
         window = Tk()#Create a window
         app = GUI(window)
@@ -109,4 +158,4 @@ if __name__ == "__main__":
 #Graph1,Graph2,Graph3
 #Try Dfs
 
-
+#If is sync you need to see this comment
