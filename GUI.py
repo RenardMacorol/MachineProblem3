@@ -18,7 +18,6 @@ class GUI:
         main_Window.title("Machine Problem #3")
         main_Window.config(background="#dadef4")
         main_Window.resizable(width=False,height=False) #voilet tokyo 
-
         self.show_welcome_screen()
 
     #Starting page/ Welcome Page
@@ -80,6 +79,7 @@ class GUI:
                                   anchor=CENTER,
                                   relief=FLAT)
         self.back_button.place(x=500,y=600)  
+    
     # remove welcome then --> dfs page 
     def dfs_clicked(self):
         self.remove_Welcome()
@@ -93,6 +93,7 @@ class GUI:
                                   anchor=CENTER,
                                   relief=FLAT)
         self.back_button.place(x=500,y=600) 
+    
     # remove welcome the --> about page  
     def aboutUs_clicked(self):
         #About Us
@@ -123,6 +124,8 @@ class GUI:
         self.back_button.place(x=500,y=600)                          
         self.group_members.place(x=415,y=30) 
         self.group_List.place(x=415,y=100)
+    
+    #back button many purpose will implemented after this
     def back_clicked(self):
         self.back_button.place_forget()                        
         self.group_members.place_forget()
@@ -135,6 +138,7 @@ class GUI:
   
    
 #Intialize program
+# Etong dalaw yung parang public static void main sa java
 def main():
         window = Tk()#Create a window
         app = GUI(window)
@@ -144,12 +148,6 @@ if __name__ == "__main__":
      main()
 
     
-
-
-
-
-
-
 
 #DFS Area 
 #Choose Graph to proceed
