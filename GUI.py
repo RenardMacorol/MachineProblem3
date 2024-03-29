@@ -67,13 +67,7 @@ class GUI:
         self.dfs_Button.place_forget()
         self.topological_Button.place_forget()
         self.aboutUs_Button.place_forget()
-    #def back_clicked(self,pagenum):
-        #if(pagenum==0):
-            
-        #if(pagenum==1):
-            
-        #if(pagenum==2):
-    # remove welcome then --> topological page
+              # remove welcome then --> topological page
     def topological_clicked(self):
         self.remove_Welcome()
         self.back_button = Button(self.main_Window,
@@ -82,7 +76,7 @@ class GUI:
                                   font=('RobotoMono',40,'bold'),
                                   fg='#000000',
                                   borderwidth=65,
-                                  command=back_clicked(0),
+                                  command=self.back_clicked,
                                   anchor=CENTER,
                                   relief=FLAT)
         self.back_button.place(x=500,y=600)  
@@ -95,7 +89,7 @@ class GUI:
                                   font=('RobotoMono',40,'bold'),
                                   fg='#000000',
                                   borderwidth=65,
-                                  command=back_clicked(0),
+                                  command=self.back_clicked,
                                   anchor=CENTER,
                                   relief=FLAT)
         self.back_button.place(x=500,y=600) 
@@ -123,13 +117,23 @@ class GUI:
                                   font=('RobotoMono',40,'bold'),
                                   fg='#000000',
                                   borderwidth=65,
-                                  command=back_clicked(0),
+                                  command=self.back_clicked,
                                   anchor=CENTER,
                                   relief=FLAT)
         self.back_button.place(x=500,y=600)                          
         self.group_members.place(x=415,y=30) 
         self.group_List.place(x=415,y=100)
-        
+    def back_clicked(self):
+        self.back_button.place_forget()                        
+        self.group_members.place_forget()
+        self.group_List.place_forget()
+
+        self.welcome_Message.place(x=280,y=50)
+        self.dfs_Button.place(x=30,y=350)
+        self.topological_Button.place(x=750,y=350)
+        self.aboutUs_Button.place(x=500,y=600)
+  
+   
 #Intialize program
 def main():
         window = Tk()#Create a window
