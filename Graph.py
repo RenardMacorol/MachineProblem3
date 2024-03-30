@@ -25,6 +25,26 @@ class Graph:
                 result += str(self.adjMatrix[i][j]) + " "
             result += "\n"
         return result
+    
+    def dfs_traversal(self, start_vertex):
+        visited = [False] * self.num_vertices  # Initialize all vertices as not visited
+        stack = []  # Create a stack for DFS
+        result = []  # List to store the DFS traversal result
+
+        stack.append(start_vertex)  # Push the start vertex onto the stack
+
+        while stack:
+            current_vertex = stack.pop()  # Pop a vertex from the stack
+            if not visited[current_vertex]:
+                result.append(self.vertices[current_vertex])  # Visit the current vertex
+                visited[current_vertex] = True
+
+            # Visit all adjacent vertices of the current vertex
+            for neighbor in range(self.num_vertices):
+                if self.adjMatrix[current_vertex][neighbor] == 1 and not visited[neighbor]:
+                    stack.append(neighbor)  # Push the adjacent vertex onto the stack
+
+        return result
 
 #Note! All of this are dag
 print("Normal DAG")
@@ -108,3 +128,9 @@ g5.addEdge(0,6)
 
 print(g5.__str__())
 
+# Example usage of the dfs method
+print("DFS traversal starting from vertex 'A':", g1.dfs_traversal(0))
+print("DFS traversal starting from vertex 'A':", g2.dfs_traversal(0))
+print("DFS traversal starting from vertex 'A':", g3.dfs_traversal(0))
+print("DFS traversal starting from vertex 'A':", g4.dfs_traversal(0))
+print("DFS traversal starting from vertex 'A':", g5.dfs_traversal(0))
