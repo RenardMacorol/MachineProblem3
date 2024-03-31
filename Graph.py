@@ -45,6 +45,27 @@ class Graph:
                     stack.append(neighbor)  # Push the adjacent vertex onto the stack
 
         return result
+    
+    def topological_sort(self):
+        visited = [False] * self.num_vertices
+        stack = []
+
+        for i in range(self.num_vertices):
+            if not visited[i]:
+                self.topological_sort_util(i, visited, stack)
+
+        return stack[::-1]  # Return the reverse of the stack for topological order
+
+    def topological_sort_util(self, vertex, visited, stack):
+        visited[vertex] = True
+
+        for neighbor in range(self.num_vertices):
+            if self.adjMatrix[vertex][neighbor] == 1 and not visited[neighbor]:
+                self.topological_sort_util(neighbor, visited, stack)
+
+        stack.append(self.vertices[vertex])
+    
+    
 
 #Note! All of this are dag
 print("Normal DAG")
@@ -128,9 +149,16 @@ g5.addEdge(0,6)
 
 print(g5.__str__())
 
-# Example usage of the dfs method
+# Example usage of the dfs method (Make a code where it can put any vertex starting point by the user)
 print("DFS traversal starting from vertex 'A':", g1.dfs_traversal(0))
 print("DFS traversal starting from vertex 'A':", g2.dfs_traversal(0))
 print("DFS traversal starting from vertex 'A':", g3.dfs_traversal(0))
 print("DFS traversal starting from vertex 'A':", g4.dfs_traversal(0))
 print("DFS traversal starting from vertex 'A':", g5.dfs_traversal(0))
+# Note that these are only starting from vertex A (Make a code where it can put any vertex starting point by the user)
+print()
+print("Topological Sort starting from vertex 'A':", g1.topological_sort())
+print("Topological Sort starting from vertex 'A':", g2.topological_sort())
+print("Topological Sort starting from vertex 'A':", g3.topological_sort())
+print("Topological Sort starting from vertex 'A':", g4.topological_sort())
+print("Topological Sort starting from vertex 'A':", g5.topological_sort())
