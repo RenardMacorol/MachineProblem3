@@ -74,25 +74,83 @@ class GUI:
                                   bg="#fffcb0", 
                                   font=('RobotoMono',40,'bold'),
                                   fg='#000000',
-                                  borderwidth=65,
-                                  command=self.back_clicked,
+                                  borderwidth=10,
+                                  command=lambda: self.back_clicked(2),
                                   anchor=CENTER,
                                   relief=FLAT)
-        self.back_button.place(x=500,y=600)  
+        self.back_button.place(x=500,y=500)  
     
     # remove welcome then --> dfs page 
     def dfs_clicked(self):
         self.remove_Welcome()
+        self.dfs_message = Message(self.main_Window,
+                                   text="Pls choose what graph will be the input",
+                                   bg="#fffcb0", 
+                                   font=('RobotoMono',30,'bold'),
+                                   fg='#000000',
+                                   width=800)
         self.back_button = Button(self.main_Window,
                                   text="Back",
                                   bg="#fffcb0", 
-                                  font=('RobotoMono',40,'bold'),
+                                  font=('RobotoMono',30,'bold'),
                                   fg='#000000',
-                                  borderwidth=65,
+                                  borderwidth=10,
+                                  command=lambda: self.back_clicked(0),
+                                  anchor=CENTER,
+                                  relief=FLAT)
+        self.graph1 = Button(self.main_Window,
+                                  text="Graph 1",
+                                  bg="#fffcb0", 
+                                  font=('RobotoMono',30,'bold'),
+                                  fg='#000000',
+                                  borderwidth=10,
                                   command=self.back_clicked,
                                   anchor=CENTER,
                                   relief=FLAT)
-        self.back_button.place(x=500,y=600) 
+        self.graph2 = Button(self.main_Window,
+                                  text="Graph_2",
+                                  bg="#fffcb0", 
+                                  font=('RobotoMono',30,'bold'),
+                                  fg='#000000',
+                                  borderwidth=10,
+                                  command=self.back_clicked,
+                                  anchor=CENTER,
+                                  relief=FLAT)
+        self.graph3 = Button(self.main_Window,
+                                  text="Graph_3",
+                                  bg="#fffcb0", 
+                                  font=('RobotoMono',30,'bold'),
+                                  fg='#000000',
+                                  borderwidth=10,
+                                  command=self.back_clicked,
+                                  anchor=CENTER,
+                                  relief=FLAT)
+        self.graph4 = Button(self.main_Window,
+                                  text="Graph_4",
+                                  bg="#fffcb0", 
+                                  font=('RobotoMono',30,'bold'),
+                                  fg='#000000',
+                                  borderwidth=10,
+                                  command=self.back_clicked,
+                                  anchor=CENTER,
+                                  relief=FLAT)
+        self.graph5 = Button(self.main_Window,
+                                  text="Graph_5",
+                                  bg="#fffcb0", 
+                                  font=('RobotoMono',30,'bold'),
+                                  fg='#000000',
+                                  borderwidth=10,
+                                  command=lambda: self.back_clicked(0),
+                                  anchor=CENTER,
+                                  relief=FLAT)
+        self.dfs_message.place(x=30,y=50)
+        self.back_button.place(x=500,y=500)
+        self.graph1.place(x=50,y=300)
+        self.graph2.place(x=250,y=300)
+        self.graph3.place(x=450,y=300)
+        self.graph4.place(x=650,y=300)
+        self.graph5.place(x=850,y=300)
+        
     
     # remove welcome the --> about page  
     def aboutUs_clicked(self):
@@ -117,25 +175,38 @@ class GUI:
                                   bg="#fffcb0", 
                                   font=('RobotoMono',40,'bold'),
                                   fg='#000000',
-                                  borderwidth=65,
-                                  command=self.back_clicked,
+                                  borderwidth=10,
+                                  command=lambda: self.back_clicked(1),
                                   anchor=CENTER,
                                   relief=FLAT)
-        self.back_button.place(x=500,y=600)                          
+        self.back_button.place(x=500,y=500)                          
         self.group_members.place(x=415,y=30) 
         self.group_List.place(x=415,y=100)
     
     #back button many purpose will implemented after this
-    def back_clicked(self):
-        self.back_button.place_forget()                        
-        self.group_members.place_forget()
-        self.group_List.place_forget()
+    def back_clicked(self,button_num):
+        self.back_button.place_forget() 
+        if(button_num==0):
+            self.dfs_message.place_forget()
+            self.graph1.place_forget()
+            self.graph2.place_forget()
+            self.graph3.place_forget()
+            self.graph4.place_forget()
+            self.graph5.place_forget()
+        #About us area
+        if(button_num==1):                     
+            self.group_members.place_forget()
+            self.group_List.place_forget()
 
         self.welcome_Message.place(x=280,y=50)
         self.dfs_Button.place(x=30,y=350)
         self.topological_Button.place(x=750,y=350)
         self.aboutUs_Button.place(x=500,y=600)
   
+
+
+#-----------------------Work in progress here-------------------------------------
+#DFS MEssages and areas
    
 #Intialize program
 # Etong dalaw yung parang public static void main sa java
