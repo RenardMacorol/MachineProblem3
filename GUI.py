@@ -209,8 +209,7 @@ class GUI:
         self.graph3.place(x=450,y=300)
         self.graph4.place(x=650,y=300)
         self.graph5.place(x=850,y=300)
-        
-    
+   
     # remove welcome the --> about page  
     def aboutUs_clicked(self):
         #About Us
@@ -270,40 +269,105 @@ class GUI:
     def graph1_clicked(self,type):
         self.remove_option()
         if(type==0):
-            print("DFS traversal starting from vertex 'A':", g1.dfs_traversal(0))
+             output= "DFS traversal starting from vertex 'A':", g1.dfs_traversal(0)
+             self.output_Message = Message(self.main_Window,
+                                            text=output,
+                                            font=('RobotoMono',30,'bold'),
+                                            fg="#1f2335",
+                                            bg="#7aa2f7",
+                                            width='800')
+             self.output_Message.place(x=280,y=50)
         if(type==1):
-            pass
-        
+            output = "Topolocial Sort", g1.topological_sort()
+            self.output_Message = Message(self.main_Window,
+                                            text=output,
+                                            font=('RobotoMono',30,'bold'),
+                                            fg="#1f2335",
+                                            bg="#7aa2f7",
+                                            width='800')
+            self.output_Message.place(x=280,y=50)
     def graph2_clicked(self,type):
         self.remove_option()
         if(type==0):
-           print("DFS traversal starting from vertex 'A':", g2.dfs_traversal(0))
-
+             output= "DFS traversal starting from vertex 'A':", g2.dfs_traversal(0)
+             self.output_Message = Message(self.main_Window,
+                                            text=output,
+                                            font=('RobotoMono',30,'bold'),
+                                            fg="#1f2335",
+                                            bg="#7aa2f7",
+                                            width='800')
+             self.output_Message.place(x=280,y=50)
         if(type==1):
-            pass
-        pass
+            output = "Topolocial Sort", g2.topological_sort()
+            self.output_Message = Message(self.main_Window,
+                                            text=output,
+                                            font=('RobotoMono',30,'bold'),
+                                            fg="#1f2335",
+                                            bg="#7aa2f7",
+                                            width='800')
+            self.output_Message.place(x=280,y=50)
+    
     def graph3_clicked(self,type):
         self.remove_option()
         if(type==0):
-          print("DFS traversal starting from vertex 'A':", g3.dfs_traversal(0))
-
+             output= "DFS traversal starting from vertex 'A':", g3.dfs_traversal(0)
+             self.output_Message = Message(self.main_Window,
+                                            text=output,
+                                            font=('RobotoMono',30,'bold'),
+                                            fg="#1f2335",
+                                            bg="#7aa2f7",
+                                            width='800')
+             self.output_Message.place(x=280,y=50)
         if(type==1):
-            pass
-        pass
+            output = "Topolocial Sort", g3.topological_sort()
+            self.output_Message = Message(self.main_Window,
+                                            text=output,
+                                            font=('RobotoMono',30,'bold'),
+                                            fg="#1f2335",
+                                            bg="#7aa2f7",
+                                            width='800')
+            self.output_Message.place(x=280,y=50)
+            
     def graph4_clicked(self,type):
         self.remove_option()
         if(type==0):
-            print("DFS traversal starting from vertex 'A':", g4.dfs_traversal(0))
+             output= "DFS traversal starting from vertex 'A':", g4.dfs_traversal(0)
+             self.output_Message = Message(self.main_Window,
+                                            text=output,
+                                            font=('RobotoMono',30,'bold'),
+                                            fg="#1f2335",
+                                            bg="#7aa2f7",
+                                            width='800')
+             self.output_Message.place(x=280,y=50)
         if(type==1):
-            pass
-        pass
+            output = "Topolocial Sort", g4.topological_sort()
+            self.output_Message = Message(self.main_Window,
+                                            text=output,
+                                            font=('RobotoMono',30,'bold'),
+                                            fg="#1f2335",
+                                            bg="#7aa2f7",
+                                            width='800')
+            self.output_Message.place(x=280,y=50)
     def graph5_clicked(self,type):
         self.remove_option()
         if(type==0):
-           print("DFS traversal starting from vertex 'A':", g5.dfs_traversal(0))
+             output= "DFS traversal starting from vertex 'A':", g5.dfs_traversal(0)
+             self.output_Message = Message(self.main_Window,
+                                            text=output,
+                                            font=('RobotoMono',30,'bold'),
+                                            fg="#1f2335",
+                                            bg="#7aa2f7",
+                                            width='800')
+             self.output_Message.place(x=280,y=50)
         if(type==1):
-            pass
-        pass
+            output = "Topolocial Sort", g5.topological_sort()
+            self.output_Message = Message(self.main_Window,
+                                            text=output,
+                                            font=('RobotoMono',30,'bold'),
+                                            fg="#1f2335",
+                                            bg="#7aa2f7",
+                                            width='800')
+            self.output_Message.place(x=280,y=50)
 
   
 

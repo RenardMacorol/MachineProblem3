@@ -45,7 +45,6 @@ class Graph:
                     stack.append(neighbor)  # Push the adjacent vertex onto the stack
 
         return result
-
     def topological_sort(self):
         visited = [False] * self.num_vertices
         stack = []
