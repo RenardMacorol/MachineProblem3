@@ -10,8 +10,9 @@ from Graph import Graph
 #DFS -->Back button, Choose Graph, Execute
 #Topological -->Back Button, Choose Graph, Execute
 #About us -->Back Button(Starting Pagae),Exit(Collappse all)
-
+outputText= 25
 class GUI:
+    
     #Default Constructors of the program
     def __init__(self,main_Window):
         self.main_Window = main_Window
@@ -240,6 +241,7 @@ class GUI:
         self.back_button.place(x=500,y=500)                          
         self.group_members.place(x=415,y=30) 
         self.group_List.place(x=415,y=100)
+   
     def remove_option(self):
         self.graph_message.place_forget()
         self.graph1.place_forget()
@@ -247,6 +249,7 @@ class GUI:
         self.graph3.place_forget()
         self.graph4.place_forget()
         self.graph5.place_forget()
+        self.back_button.place_forget()
     #back button many purpose will implemented after this
     def back_clicked(self,button_num):
         self.back_button.place_forget() 
@@ -258,41 +261,65 @@ class GUI:
             self.group_List.place_forget()
         if(button_num==2):
            self.remove_option()
-
+        if(button_num==3):
+            self.output_Message.place_forget()
         self.welcome_Message.place(x=280,y=50)
         self.dfs_Button.place(x=30,y=350)
         self.topological_Button.place(x=750,y=350)
         self.aboutUs_Button.place(x=500,y=600)
     
-   
+    
     #dfe ==0 topo ==1
     def graph1_clicked(self,type):
         self.remove_option()
+        self.back_button = Button(self.main_Window,
+                                  text="Back",
+                                  bg="#fffcb0", 
+                                  font=('RobotoMono',30,'bold'),
+                                  fg='#000000',
+                                  borderwidth=10,
+                                  command=lambda: self.back_clicked(3),
+                                  anchor=CENTER,
+                                  relief=FLAT)
+             
+        self.back_button.place(x=500,y=500)
         if(type==0):
              output= "DFS traversal starting from vertex 'A':", g1.dfs_traversal(0)
              self.output_Message = Message(self.main_Window,
                                             text=output,
-                                            font=('RobotoMono',30,'bold'),
+                                            font=('RobotoMono',outputText,'bold'),
                                             fg="#1f2335",
                                             bg="#7aa2f7",
                                             width='800')
+            
              self.output_Message.place(x=280,y=50)
         if(type==1):
             output = "Topolocial Sort", g1.topological_sort()
             self.output_Message = Message(self.main_Window,
                                             text=output,
-                                            font=('RobotoMono',30,'bold'),
+                                            font=('RobotoMono',outputText,'bold'),
                                             fg="#1f2335",
                                             bg="#7aa2f7",
                                             width='800')
             self.output_Message.place(x=280,y=50)
     def graph2_clicked(self,type):
         self.remove_option()
+        self.back_button = Button(self.main_Window,
+                                  text="Back",
+                                  bg="#fffcb0", 
+                                  font=('RobotoMono',30,'bold'),
+                                  fg='#000000',
+                                  borderwidth=10,
+                                  command=lambda: self.back_clicked(3),
+                                  anchor=CENTER,
+                                  relief=FLAT)
+             
+        self.back_button.place(x=500,y=500)
         if(type==0):
              output= "DFS traversal starting from vertex 'A':", g2.dfs_traversal(0)
              self.output_Message = Message(self.main_Window,
                                             text=output,
-                                            font=('RobotoMono',30,'bold'),
+                                            font=('RobotoMono',outputText,'bold'),
                                             fg="#1f2335",
                                             bg="#7aa2f7",
                                             width='800')
@@ -301,7 +328,7 @@ class GUI:
             output = "Topolocial Sort", g2.topological_sort()
             self.output_Message = Message(self.main_Window,
                                             text=output,
-                                            font=('RobotoMono',30,'bold'),
+                                            font=('RobotoMono',outputText,'bold'),
                                             fg="#1f2335",
                                             bg="#7aa2f7",
                                             width='800')
@@ -309,11 +336,22 @@ class GUI:
     
     def graph3_clicked(self,type):
         self.remove_option()
+        self.back_button = Button(self.main_Window,
+                                  text="Back",
+                                  bg="#fffcb0", 
+                                  font=('RobotoMono',30,'bold'),
+                                  fg='#000000',
+                                  borderwidth=10,
+                                  command=lambda: self.back_clicked(3),
+                                  anchor=CENTER,
+                                  relief=FLAT)
+             
+        self.back_button.place(x=500,y=500)
         if(type==0):
              output= "DFS traversal starting from vertex 'A':", g3.dfs_traversal(0)
              self.output_Message = Message(self.main_Window,
                                             text=output,
-                                            font=('RobotoMono',30,'bold'),
+                                            font=('RobotoMono',outputText,'bold'),
                                             fg="#1f2335",
                                             bg="#7aa2f7",
                                             width='800')
@@ -322,7 +360,7 @@ class GUI:
             output = "Topolocial Sort", g3.topological_sort()
             self.output_Message = Message(self.main_Window,
                                             text=output,
-                                            font=('RobotoMono',30,'bold'),
+                                            font=('RobotoMono',outputText,'bold'),
                                             fg="#1f2335",
                                             bg="#7aa2f7",
                                             width='800')
@@ -330,11 +368,22 @@ class GUI:
             
     def graph4_clicked(self,type):
         self.remove_option()
+        self.back_button = Button(self.main_Window,
+                                  text="Back",
+                                  bg="#fffcb0", 
+                                  font=('RobotoMono',30,'bold'),
+                                  fg='#000000',
+                                  borderwidth=10,
+                                  command=lambda: self.back_clicked(3),
+                                  anchor=CENTER,
+                                  relief=FLAT)
+             
+        self.back_button.place(x=500,y=500)
         if(type==0):
              output= "DFS traversal starting from vertex 'A':", g4.dfs_traversal(0)
              self.output_Message = Message(self.main_Window,
                                             text=output,
-                                            font=('RobotoMono',30,'bold'),
+                                            font=('RobotoMono',outputText,'bold'),
                                             fg="#1f2335",
                                             bg="#7aa2f7",
                                             width='800')
@@ -343,18 +392,29 @@ class GUI:
             output = "Topolocial Sort", g4.topological_sort()
             self.output_Message = Message(self.main_Window,
                                             text=output,
-                                            font=('RobotoMono',30,'bold'),
+                                            font=('RobotoMono',outputText,'bold'),
                                             fg="#1f2335",
                                             bg="#7aa2f7",
                                             width='800')
             self.output_Message.place(x=280,y=50)
     def graph5_clicked(self,type):
         self.remove_option()
+        self.back_button = Button(self.main_Window,
+                                  text="Back",
+                                  bg="#fffcb0", 
+                                  font=('RobotoMono',30,'bold'),
+                                  fg='#000000',
+                                  borderwidth=10,
+                                  command=lambda: self.back_clicked(3),
+                                  anchor=CENTER,
+                                  relief=FLAT)
+             
+        self.back_button.place(x=500,y=500)
         if(type==0):
              output= "DFS traversal starting from vertex 'A':", g5.dfs_traversal(0)
              self.output_Message = Message(self.main_Window,
                                             text=output,
-                                            font=('RobotoMono',30,'bold'),
+                                            font=('RobotoMono',outputText,'bold'),
                                             fg="#1f2335",
                                             bg="#7aa2f7",
                                             width='800')
@@ -363,7 +423,7 @@ class GUI:
             output = "Topolocial Sort", g5.topological_sort()
             self.output_Message = Message(self.main_Window,
                                             text=output,
-                                            font=('RobotoMono',30,'bold'),
+                                            font=('RobotoMono',outputText,'bold'),
                                             fg="#1f2335",
                                             bg="#7aa2f7",
                                             width='800')
