@@ -46,3 +46,21 @@ class Graph:
 
         return result
 
+    def topological_sort(self):
+        visited = [False] * self.num_vertices
+        stack = []
+
+        for i in range(self.num_vertices):
+            if not visited[i]:
+                self.topological_sort_util(i, visited, stack)
+
+        return stack[::-1]  # Return the reverse of the stack for topological order
+
+    def topological_sort_util(self, vertex, visited, stack):
+        visited[vertex] = True
+
+        for neighbor in range(self.num_vertices):
+            if self.adjMatrix[vertex][neighbor] == 1 and not visited[neighbor]:
+                self.topological_sort_util(neighbor, visited, stack)
+
+        stack.append(self.vertices[vertex])
