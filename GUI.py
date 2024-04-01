@@ -1,6 +1,7 @@
 from tkinter import * #import tkinter
 from Graph import Graph
 
+
 #NOTE!! Plss for Development GUI Refer in this link 
 # https://www.canva.com/design/DAGA173ym1c/d_z45DCcBHGC4QYWXCA_Fg/edit?utm_content=DAGA173ym1c&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
@@ -10,15 +11,16 @@ from Graph import Graph
 #DFS -->Back button, Choose Graph, Execute
 #Topological -->Back Button, Choose Graph, Execute
 #About us -->Back Button(Starting Pagae),Exit(Collappse all)
-outputText= 30
+outputText= 25
 outputWidth = 1800
 #Output pos
-outputX=100
+outputX=50
 outputY=200
 graph1placeX = 50
 graph1placeY = 300
+
 class GUI:
-    
+
     #Default Constructors of the program
     def __init__(self,main_Window):
         self.main_Window = main_Window
@@ -77,6 +79,17 @@ class GUI:
               # remove welcome then --> topological page
     def topological_clicked(self):
         self.remove_Welcome()
+        self.dag1_image = PhotoImage(file="res/Dag 1 Vertex.png")
+        
+        self.dagDis_image = PhotoImage(file="res/DAG Disconnected.png")
+        
+        self.dagCycle_image = PhotoImage(file="res/Dag with Cycle.png")
+      
+        self.multi_image = PhotoImage(file="res/Multiple Root Dag.png")
+      
+        self.normal_image = PhotoImage(file="res/Normal Dag.png")
+        
+
         self.graph_message = Message(self.main_Window,
                                    text="Pls choose what graph will be the input",
                                    bg="#fffcb0", 
@@ -94,41 +107,36 @@ class GUI:
                                   relief=FLAT)
         self.back_button.place(x=500,y=500)  
         self.graph1 = Button(self.main_Window,
-                                  text="Graph 1",
+                                  image=self.normal_image,
                                   bg="#fffcb0", 
-                                  font=('RobotoMono',30,'bold'),
                                   fg='#000000',
                                   command=lambda:self.graph1_clicked(1),
                                   anchor=CENTER,
                                   relief=FLAT)
         self.graph2 = Button(self.main_Window,
-                                  text="Graph 2",
+                                  image=self.multi_image,
                                   bg="#fffcb0", 
-                                  font=('RobotoMono',30,'bold'),
                                   fg='#000000',
                                   command=lambda:self.graph2_clicked(1),
                                   anchor=CENTER,
                                   relief=FLAT)
         self.graph3 = Button(self.main_Window,
-                                  text="Graph 3",
-                                  bg="#fffcb0", 
-                                  font=('RobotoMono',30,'bold'),
+                                  image=self.dagCycle_image,
+                                  bg="#fffcb0",                   
                                   fg='#000000',
                                   command=lambda:self.graph3_clicked(1),
                                   anchor=CENTER,
                                   relief=FLAT)
         self.graph4 = Button(self.main_Window,
-                                  text="Graph 4",
-                                  bg="#fffcb0", 
-                                  font=('RobotoMono',30,'bold'),
+                                  image=self.dag1_image,
+                                  bg="#fffcb0",                        
                                   fg='#000000',
                                   command=lambda:self.graph4_clicked(1),
                                   anchor=CENTER,
                                   relief=FLAT)
         self.graph5 = Button(self.main_Window,
-                                  text="Graph 5",
-                                  bg="#fffcb0", 
-                                  font=('RobotoMono',30,'bold'),
+                                  image=self.dagDis_image,
+                                  bg="#fffcb0",                           
                                   fg='#000000',                       
                                   command=lambda: self.graph5_clicked(1),
                                   anchor=CENTER,
@@ -143,6 +151,17 @@ class GUI:
     # remove welcome then --> dfs page 
     def dfs_clicked(self):
         self.remove_Welcome()
+        
+        self.dag1_image = PhotoImage(file="res/Dag 1 Vertex.png")
+        
+        self.dagDis_image = PhotoImage(file="res/DAG Disconnected.png")
+        
+        self.dagCycle_image = PhotoImage(file="res/Dag with Cycle.png")
+      
+        self.multi_image = PhotoImage(file="res/Multiple Root Dag.png")
+      
+        self.normal_image = PhotoImage(file="res/Normal Dag.png")
+
         self.graph_message = Message(self.main_Window,
                                    text="Pls choose what graph will be the input",
                                    bg="#fffcb0", 
@@ -152,55 +171,45 @@ class GUI:
         self.back_button = Button(self.main_Window,
                                   text="Back",
                                   bg="#fffcb0", 
-                                  font=('RobotoMono',30,'bold'),
+                                  font=('RobotoMono',40,'bold'),
                                   fg='#000000',
                                   borderwidth=10,
                                   command=lambda: self.back_clicked(0),
                                   anchor=CENTER,
                                   relief=FLAT)
-        
+        self.back_button.place(x=500,y=500)  
         self.graph1 = Button(self.main_Window,
-                                  text="Graph 1",
-                                  bg="#fffcb0", 
-                                  font=('RobotoMono',30,'bold'),
+                                  image=self.normal_image,
+                                  bg="#fffcb0",      
                                   fg='#000000',
-                                  borderwidth=10,
                                   command=lambda:self.graph1_clicked(0),
                                   anchor=CENTER,
                                   relief=FLAT)
         self.graph2 = Button(self.main_Window,
-                                  text="Graph 2",
+                                  image=self.multi_image,
                                   bg="#fffcb0", 
-                                  font=('RobotoMono',30,'bold'),
                                   fg='#000000',
-                                  borderwidth=10,
                                   command=lambda:self.graph2_clicked(0),
                                   anchor=CENTER,
                                   relief=FLAT)
         self.graph3 = Button(self.main_Window,
-                                  text="Graph 3",
+                                  image=self.dagCycle_image,
                                   bg="#fffcb0", 
-                                  font=('RobotoMono',30,'bold'),
                                   fg='#000000',
-                                  borderwidth=10,
                                   command=lambda:self.graph3_clicked(0),
                                   anchor=CENTER,
                                   relief=FLAT)
         self.graph4 = Button(self.main_Window,
-                                  text="Graph 4",
+                                  image=self.dag1_image,
                                   bg="#fffcb0", 
-                                  font=('RobotoMono',30,'bold'),
                                   fg='#000000',
-                                  borderwidth=10,
                                   command=lambda:self.graph4_clicked(0),
                                   anchor=CENTER,
                                   relief=FLAT)
         self.graph5 = Button(self.main_Window,
-                                  text="Graph 5",
+                                  image=self.dagDis_image,
                                   bg="#fffcb0", 
-                                  font=('RobotoMono',30,'bold'),
-                                  fg='#000000',
-                                  borderwidth=10,
+                                  fg='#000000',                       
                                   command=lambda: self.graph5_clicked(0),
                                   anchor=CENTER,
                                   relief=FLAT)
@@ -286,7 +295,7 @@ class GUI:
              
         self.back_button.place(x=500,y=500)
         if(type==0):
-             output= "DFS traversal starting from vertex 'A':", g1.dfs_traversal(0)
+             output= "DFS traversal starting from vertex 'A':", str(g1.dfs_traversal(0))
              self.output_Message = Message(self.main_Window,
                                             text=output,
                                             font=('RobotoMono',outputText,'bold'),
@@ -296,7 +305,7 @@ class GUI:
             
              self.output_Message.place(x=outputX,y=outputY)
         if(type==1):
-            output = "Topolocial Sort", g1.topological_sort()
+            output = "Topolocial Sort: ", str(g1.topological_sort())
             self.output_Message = Message(self.main_Window,
                                             text=output,
                                             font=('RobotoMono',outputText,'bold'),
@@ -318,7 +327,7 @@ class GUI:
              
         self.back_button.place(x=500,y=500)
         if(type==0):
-             output= "DFS traversal starting from vertex 'A':", g2.dfs_traversal(0)
+             output= "DFS traversal starting from vertex 'A':", str(g2.dfs_traversal(0))
              self.output_Message = Message(self.main_Window,
                                             text=output,
                                             font=('RobotoMono',outputText,'bold'),
@@ -327,7 +336,7 @@ class GUI:
                                             width=outputWidth)
              self.output_Message.place(x=outputX,y=outputY)
         if(type==1):
-            output = "Topolocial Sort", g2.topological_sort()
+            output = "Topolocial Sort: ", str(g2.topological_sort())
             self.output_Message = Message(self.main_Window,
                                             text=output,
                                             font=('RobotoMono',outputText,'bold'),
@@ -349,7 +358,7 @@ class GUI:
              
         self.back_button.place(x=500,y=500)
         if(type==0):
-             output= "DFS traversal starting from vertex 'A':", g3.dfs_traversal(0)
+             output= "DFS traversal starting from vertex 'A':", str(g3.dfs_traversal(0))
              self.output_Message = Message(self.main_Window,
                                             text=output,
                                             font=('RobotoMono',outputText,'bold'),
@@ -358,7 +367,7 @@ class GUI:
                                             width=outputWidth)
              self.output_Message.place(x=outputX,y=outputY)
         if(type==1):
-            output = "Topolocial Sort", g3.topological_sort()
+            output = "Topolocial Sort: ", str(g3.topological_sort())
             self.output_Message = Message(self.main_Window,
                                             text=output,
                                             font=('RobotoMono',outputText,'bold'),
@@ -413,7 +422,7 @@ class GUI:
              
         self.back_button.place(x=500,y=500)
         if(type==0):
-             output= "DFS traversal starting from vertex 'A':", g5.dfs_traversal(0)
+             output= "DFS traversal starting from vertex 'A':", str(g5.dfs_traversal(0))
              self.output_Message = Message(self.main_Window,
                                             text=output,
                                             font=('RobotoMono',outputText,'bold'),
@@ -422,7 +431,7 @@ class GUI:
                                             width=outputWidth)
              self.output_Message.place(x=outputX,y=outputY)
         if(type==1):
-            output = "Topolocial Sort", g5.topological_sort()
+            output = "Topolocial Sort: ", str(g5.topological_sort())
             self.output_Message = Message(self.main_Window,
                                             text=output,
                                             font=('RobotoMono',outputText,'bold'),
