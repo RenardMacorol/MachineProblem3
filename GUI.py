@@ -222,11 +222,12 @@ class GUI:
               bg='#8590c5',
               relief=FLAT) #Background Color
         self.group_List = Message(self.main_Window, 
-                        text="Macorol, \nCampos, \nTamayo, \nBandong",
-                        bg="#fffcb0", 
+                        text="Macorol,Renard B. , \nCampos,Vince D. , \nTamayo, \nBandong",
+                        bg="#dadef4", 
                         font=('RobotoMono',40,'bold'),
                         fg='#000000',
-                        borderwidth=65,
+                        borderwidth=10,
+                        width=1000,
                         anchor=CENTER,
                         relief=FLAT)
         self.back_button = Button(self.main_Window,
@@ -238,9 +239,9 @@ class GUI:
                                   command=lambda: self.back_clicked(1),
                                   anchor=CENTER,
                                   relief=FLAT)
-        self.back_button.place(x=500,y=500)                          
+        self.back_button.place(x=500,y=600)                          
         self.group_members.place(x=415,y=30) 
-        self.group_List.place(x=415,y=100)
+        self.group_List.place(x=300,y=150)
    
     def remove_option(self):
         self.graph_message.place_forget()
@@ -333,7 +334,6 @@ class GUI:
                                             bg="#7aa2f7",
                                             width='800')
             self.output_Message.place(x=280,y=50)
-    
     def graph3_clicked(self,type):
         self.remove_option()
         self.back_button = Button(self.main_Window,
@@ -364,8 +364,7 @@ class GUI:
                                             fg="#1f2335",
                                             bg="#7aa2f7",
                                             width='800')
-            self.output_Message.place(x=280,y=50)
-            
+            self.output_Message.place(x=280,y=50)         
     def graph4_clicked(self,type):
         self.remove_option()
         self.back_button = Button(self.main_Window,
