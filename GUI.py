@@ -15,6 +15,8 @@ outputWidth = 1800
 #Output pos
 outputX=100
 outputY=200
+graph1placeX = 50
+graph1placeY = 300
 class GUI:
     
     #Default Constructors of the program
@@ -96,53 +98,48 @@ class GUI:
                                   bg="#fffcb0", 
                                   font=('RobotoMono',30,'bold'),
                                   fg='#000000',
-                                  borderwidth=10,
                                   command=lambda:self.graph1_clicked(1),
                                   anchor=CENTER,
                                   relief=FLAT)
         self.graph2 = Button(self.main_Window,
-                                  text="Graph_2",
+                                  text="Graph 2",
                                   bg="#fffcb0", 
                                   font=('RobotoMono',30,'bold'),
                                   fg='#000000',
-                                  borderwidth=10,
                                   command=lambda:self.graph2_clicked(1),
                                   anchor=CENTER,
                                   relief=FLAT)
         self.graph3 = Button(self.main_Window,
-                                  text="Graph_3",
+                                  text="Graph 3",
                                   bg="#fffcb0", 
                                   font=('RobotoMono',30,'bold'),
                                   fg='#000000',
-                                  borderwidth=10,
                                   command=lambda:self.graph3_clicked(1),
                                   anchor=CENTER,
                                   relief=FLAT)
         self.graph4 = Button(self.main_Window,
-                                  text="Graph_4",
+                                  text="Graph 4",
                                   bg="#fffcb0", 
                                   font=('RobotoMono',30,'bold'),
                                   fg='#000000',
-                                  borderwidth=10,
                                   command=lambda:self.graph4_clicked(1),
                                   anchor=CENTER,
                                   relief=FLAT)
         self.graph5 = Button(self.main_Window,
-                                  text="Graph_5",
+                                  text="Graph 5",
                                   bg="#fffcb0", 
                                   font=('RobotoMono',30,'bold'),
-                                  fg='#000000',
-                                  borderwidth=10,
+                                  fg='#000000',                       
                                   command=lambda: self.graph5_clicked(1),
                                   anchor=CENTER,
                                   relief=FLAT)
         self.graph_message.place(x=30,y=50)
         self.back_button.place(x=500,y=500)
-        self.graph1.place(x=50,y=300)
-        self.graph2.place(x=250,y=300)
-        self.graph3.place(x=450,y=300)
-        self.graph4.place(x=650,y=300)
-        self.graph5.place(x=850,y=300)
+        self.graph1.place(x=graph1placeX,y=graph1placeY)
+        self.graph2.place(x=graph1placeX*5.5,y=graph1placeY)
+        self.graph3.place(x=graph1placeX*10,y=graph1placeY)
+        self.graph4.place(x=graph1placeX*15,y=graph1placeY)
+        self.graph5.place(x=graph1placeX*20,y=graph1placeY)
     # remove welcome then --> dfs page 
     def dfs_clicked(self):
         self.remove_Welcome()
@@ -172,7 +169,7 @@ class GUI:
                                   anchor=CENTER,
                                   relief=FLAT)
         self.graph2 = Button(self.main_Window,
-                                  text="Graph_2",
+                                  text="Graph 2",
                                   bg="#fffcb0", 
                                   font=('RobotoMono',30,'bold'),
                                   fg='#000000',
@@ -181,7 +178,7 @@ class GUI:
                                   anchor=CENTER,
                                   relief=FLAT)
         self.graph3 = Button(self.main_Window,
-                                  text="Graph_3",
+                                  text="Graph 3",
                                   bg="#fffcb0", 
                                   font=('RobotoMono',30,'bold'),
                                   fg='#000000',
@@ -190,7 +187,7 @@ class GUI:
                                   anchor=CENTER,
                                   relief=FLAT)
         self.graph4 = Button(self.main_Window,
-                                  text="Graph_4",
+                                  text="Graph 4",
                                   bg="#fffcb0", 
                                   font=('RobotoMono',30,'bold'),
                                   fg='#000000',
@@ -199,7 +196,7 @@ class GUI:
                                   anchor=CENTER,
                                   relief=FLAT)
         self.graph5 = Button(self.main_Window,
-                                  text="Graph_5",
+                                  text="Graph 5",
                                   bg="#fffcb0", 
                                   font=('RobotoMono',30,'bold'),
                                   fg='#000000',
@@ -209,11 +206,11 @@ class GUI:
                                   relief=FLAT)
         self.graph_message.place(x=30,y=50)
         self.back_button.place(x=500,y=500)
-        self.graph1.place(x=50,y=300)
-        self.graph2.place(x=250,y=300)
-        self.graph3.place(x=450,y=300)
-        self.graph4.place(x=650,y=300)
-        self.graph5.place(x=850,y=300)
+        self.graph1.place(x=graph1placeX,y=graph1placeY)
+        self.graph2.place(x=graph1placeX*5.5,y=graph1placeY)
+        self.graph3.place(x=graph1placeX*10,y=graph1placeY)
+        self.graph4.place(x=graph1placeX*15,y=graph1placeY)
+        self.graph5.place(x=graph1placeX*20,y=graph1placeY)
    
     # remove welcome the --> about page  
     def aboutUs_clicked(self):
@@ -226,7 +223,7 @@ class GUI:
               bg='#8590c5',
               relief=FLAT) #Background Color
         self.group_List = Message(self.main_Window, 
-                        text="Macorol,Renard B. , \nCampos,Vince D. , \nTamayo, \nBandong",
+                        text="Macorol,Renard B. , \nCampos,Vince D.",
                         bg="#dadef4", 
                         font=('RobotoMono',40,'bold'),
                         fg='#000000',
