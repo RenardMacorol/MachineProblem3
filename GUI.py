@@ -10,7 +10,11 @@ from Graph import Graph
 #DFS -->Back button, Choose Graph, Execute
 #Topological -->Back Button, Choose Graph, Execute
 #About us -->Back Button(Starting Pagae),Exit(Collappse all)
-outputText= 25
+outputText= 30
+outputWidth = 1800
+#Output pos
+outputX=100
+outputY=200
 class GUI:
     
     #Default Constructors of the program
@@ -291,9 +295,9 @@ class GUI:
                                             font=('RobotoMono',outputText,'bold'),
                                             fg="#1f2335",
                                             bg="#7aa2f7",
-                                            width='800')
+                                            width=outputWidth)
             
-             self.output_Message.place(x=280,y=50)
+             self.output_Message.place(x=outputX,y=outputY)
         if(type==1):
             output = "Topolocial Sort", g1.topological_sort()
             self.output_Message = Message(self.main_Window,
@@ -301,8 +305,8 @@ class GUI:
                                             font=('RobotoMono',outputText,'bold'),
                                             fg="#1f2335",
                                             bg="#7aa2f7",
-                                            width='800')
-            self.output_Message.place(x=280,y=50)
+                                            width=outputWidth)
+            self.output_Message.place(x=outputX,y=outputY)
     def graph2_clicked(self,type):
         self.remove_option()
         self.back_button = Button(self.main_Window,
@@ -323,8 +327,8 @@ class GUI:
                                             font=('RobotoMono',outputText,'bold'),
                                             fg="#1f2335",
                                             bg="#7aa2f7",
-                                            width='800')
-             self.output_Message.place(x=280,y=50)
+                                            width=outputWidth)
+             self.output_Message.place(x=outputX,y=outputY)
         if(type==1):
             output = "Topolocial Sort", g2.topological_sort()
             self.output_Message = Message(self.main_Window,
@@ -332,8 +336,8 @@ class GUI:
                                             font=('RobotoMono',outputText,'bold'),
                                             fg="#1f2335",
                                             bg="#7aa2f7",
-                                            width='800')
-            self.output_Message.place(x=280,y=50)
+                                            width=outputWidth)
+            self.output_Message.place(x=outputX,y=outputY)
     def graph3_clicked(self,type):
         self.remove_option()
         self.back_button = Button(self.main_Window,
@@ -354,8 +358,8 @@ class GUI:
                                             font=('RobotoMono',outputText,'bold'),
                                             fg="#1f2335",
                                             bg="#7aa2f7",
-                                            width='800')
-             self.output_Message.place(x=280,y=50)
+                                            width=outputWidth)
+             self.output_Message.place(x=outputX,y=outputY)
         if(type==1):
             output = "Topolocial Sort", g3.topological_sort()
             self.output_Message = Message(self.main_Window,
@@ -363,8 +367,8 @@ class GUI:
                                             font=('RobotoMono',outputText,'bold'),
                                             fg="#1f2335",
                                             bg="#7aa2f7",
-                                            width='800')
-            self.output_Message.place(x=280,y=50)         
+                                            width=outputWidth)
+            self.output_Message.place(x=outputX,y=outputY)     
     def graph4_clicked(self,type):
         self.remove_option()
         self.back_button = Button(self.main_Window,
@@ -378,24 +382,26 @@ class GUI:
                                   relief=FLAT)
              
         self.back_button.place(x=500,y=500)
-        if(type==0):
-             output= "DFS traversal starting from vertex 'A':", g4.dfs_traversal(0)
-             self.output_Message = Message(self.main_Window,
-                                            text=output,
-                                            font=('RobotoMono',outputText,'bold'),
-                                            fg="#1f2335",
-                                            bg="#7aa2f7",
-                                            width='800')
-             self.output_Message.place(x=280,y=50)
-        if(type==1):
-            output = "Topolocial Sort", g4.topological_sort()
-            self.output_Message = Message(self.main_Window,
-                                            text=output,
-                                            font=('RobotoMono',outputText,'bold'),
-                                            fg="#1f2335",
-                                            bg="#7aa2f7",
-                                            width='800')
-            self.output_Message.place(x=280,y=50)
+        if type == 0:
+            output = "DFS traversal starting from vertex 'A': " + str(g4.dfs_traversal(0))
+            outputText = len(output)
+            outputWidth = outputText * 10  # Adjust the width as needed
+            outputX = 30
+            outputY = 50
+        elif type == 1:
+            output = "Topological Sort: " + str(g4.topological_sort())
+            outputText = len(output)
+            outputWidth = outputText * 15  # Adjust the width as needed
+            outputX = 30
+            outputY = 50
+
+        self.output_Message = Message(self.main_Window,
+                                  text=output,
+                                  font=('RobotoMono', outputText, 'bold'),
+                                  fg="#1f2335",
+                                  bg="#7aa2f7",
+                                  width=outputWidth)
+        self.output_Message.place(x=outputX, y=outputY)
     def graph5_clicked(self,type):
         self.remove_option()
         self.back_button = Button(self.main_Window,
@@ -416,8 +422,8 @@ class GUI:
                                             font=('RobotoMono',outputText,'bold'),
                                             fg="#1f2335",
                                             bg="#7aa2f7",
-                                            width='800')
-             self.output_Message.place(x=280,y=50)
+                                            width=outputWidth)
+             self.output_Message.place(x=outputX,y=outputY)
         if(type==1):
             output = "Topolocial Sort", g5.topological_sort()
             self.output_Message = Message(self.main_Window,
@@ -425,8 +431,8 @@ class GUI:
                                             font=('RobotoMono',outputText,'bold'),
                                             fg="#1f2335",
                                             bg="#7aa2f7",
-                                            width='800')
-            self.output_Message.place(x=280,y=50)
+                                            width=outputWidth)
+            self.output_Message.place(x=outputX,y=outputY)
 
   
 
