@@ -232,7 +232,7 @@ class GUI:
               bg='#8590c5',
               relief=FLAT) #Background Color
         self.group_List = Message(self.main_Window, 
-                        text="Macorol,Renard B. , \nCampos,Vince D.",
+                        text="Macorol,Renard B. , \nCampos,Vince D. \nBandong, Cedric O.\nTamayo, Joaquin Elijah P.",
                         bg="#dadef4", 
                         font=('RobotoMono',40,'bold'),
                         fg='#000000',
